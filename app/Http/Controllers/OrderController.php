@@ -15,7 +15,7 @@ use App\Ordertaker;
 use App\Invoice;
 use App\InvoiceDetail;
 use App\Area;
-// use DB;
+
 use Auth;
 
 use Illuminate\Support\Facades\DB;
@@ -23,16 +23,14 @@ use phpDocumentor\Reflection\Types\Null_;
 class OrderController extends Controller{
 
     public function index($orders,$type){
+     
         $products = Product::get();
         $product_report = [];
         $counter = 0;
-
-        if($orders!=null){
         
-
+        if($orders!=null){
         foreach($products as $p){
-            $ppunit = 0;
-            $ppamount = 0;
+            $ppunit = 0;$ppamount = 0;
             $product_report[$counter]['id'] = $p->id;
             $product_report[$counter]['name'] = $p->name;
             foreach($orders as $in){
@@ -57,7 +55,7 @@ class OrderController extends Controller{
             return view('orders.all' , compact('orders' , 'product_report','ordertakers', 'areas'));
         }
         else if($type==2){
-            return view('orders.unconfirmed' , compact('orders' , 'product_report','ordertakers', 'areas', 'condition'));
+            return view('orders.unconfirmed' , compact('orders' , 'product_report','ordertakers', 'areas' , 'condition'));
         }
         else if($type==3){
             return view('orders.seller_confirmed' , compact('orders' , 'product_report','ordertakers', 'areas'));
@@ -547,7 +545,7 @@ class OrderController extends Controller{
         $order->received_amount = $request->received_amount;
         $order->order_date=$request->order_date;
         if($tt_amount >= $request->received_amount){
-                $order->amount_left = ($tt_amount -  $request->received_amount);        
+            $order->amount_left = ($tt_amount -  $request->received_amount);
         }
         else{
             $order->advance = $request->received_amount - $tt_amount;
@@ -601,9 +599,8 @@ class OrderController extends Controller{
                 $orderDetails->save();
             }
         }
-        
+      
         Order::where('id' , $order_id)->update(['ot_benefit' => $order->orderdetail->sum('ot_benefit') , 'c_benefit' => $order->orderdetail->sum('c_benefit') , 'p_amount' => $order->orderdetail->sum('p_amount')]);
-
         return redirect()->route('unconfirmed.orders')->with('success' , 'Order Created');
     }
 
@@ -639,14 +636,7 @@ class OrderController extends Controller{
             }
         }
           $old_order = Order::where('customer_id' , $order->customer_id)->orderBy('id' , 'desc')->get();
-            $amount_left=$old_order[0]->amount_left -$old_order[0]->subtotal; 
-          if($old_order[0]->received_amount!==$amount_left){
-              $amount_left;
-          }else
-          {
-            $amount_left=$old_order[0]->amount_left;
-          }
-
+          $amount_left=$old_order[0]->amount_left - $old_order[0]->subtotal + $old_order[0]->received_amount; 
          
         $old_balance = 0;
         if(sizeof($old_order) > 1){
@@ -663,13 +653,12 @@ class OrderController extends Controller{
          $request->amount;
         if(sizeof($order)){
             if($request->amount_left_input){
-                $amount_left = $order[0]->amount_left;
+                $amount_left = $order[0]->amount_left + $order[0]->received_amount;
                 
                 $order = Order::where($conditions)
-                ->update(
-                [
-                 'amount_left' => $amount_left - $request->amount_left_input ,
+                ->update(['amount_left' => $amount_left - $request->amount_left_input + $order[0]->received_amount,
                  'received_amount' => $order[0]->received_amount + $request->amount_left_input,
+                 // 'amount' => $request->hid ,
                 ]
                 );
                 return Common::Message("Order" , 2);
@@ -677,8 +666,11 @@ class OrderController extends Controller{
         
         else{
             // $this->deleteOrder($id);
-            $this->storeOrder($request , $order[0]->id);   
-            return redirect()->route('all.orders')->with('success' , 'Order Updated');
+             
+            Order::where('id' , $id)->update(['amount_left' => $order[0]->amount_left + $order[0]->received_amount , 'received_amount' => $order[0]->received_amount + $request->amount_left_input]);
+            $this->storeOrder($request , $order[0]->id);
+
+            return redirect()->route('unconfirmed.orders')->with('success' , 'Order Updated');
             }
         }
         else{
