@@ -1,0 +1,10 @@
+[09-Sep-2019 11:51:44 UTC] PHP Fatal error:  Class 'Illuminate\Support\ServiceProvider' not found in /home/scoopscr/public_html/app/Providers/AppServiceProvider.php on line 7
+[09-Sep-2019 11:51:47 UTC] PHP Fatal error:  Class 'Illuminate\Support\ServiceProvider' not found in /home/scoopscr/public_html/app/Providers/AppServiceProvider.php on line 7
+[09-Sep-2019 11:51:47 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Support\Providers\AuthServiceProvider' not found in /home/scoopscr/public_html/app/Providers/AuthServiceProvider.php on line 9
+[09-Sep-2019 11:51:49 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Support\Providers\AuthServiceProvider' not found in /home/scoopscr/public_html/app/Providers/AuthServiceProvider.php on line 9
+[09-Sep-2019 11:51:53 UTC] PHP Fatal error:  Class 'Illuminate\Support\ServiceProvider' not found in /home/scoopscr/public_html/app/Providers/BroadcastServiceProvider.php on line 8
+[09-Sep-2019 11:51:55 UTC] PHP Fatal error:  Class 'Illuminate\Support\ServiceProvider' not found in /home/scoopscr/public_html/app/Providers/BroadcastServiceProvider.php on line 8
+[09-Sep-2019 11:51:56 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Support\Providers\EventServiceProvider' not found in /home/scoopscr/public_html/app/Providers/EventServiceProvider.php on line 8
+[09-Sep-2019 11:51:57 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Support\Providers\EventServiceProvider' not found in /home/scoopscr/public_html/app/Providers/EventServiceProvider.php on line 8
+[09-Sep-2019 11:51:57 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Support\Providers\RouteServiceProvider' not found in /home/scoopscr/public_html/app/Providers/RouteServiceProvider.php on line 8
+[09-Sep-2019 11:51:58 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Support\Providers\RouteServiceProvider' not found in /home/scoopscr/public_html/app/Providers/RouteServiceProvider.php on line 8

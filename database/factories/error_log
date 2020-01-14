@@ -1,0 +1,30 @@
+[09-Sep-2019 10:24:06 UTC] PHP Notice:  Undefined variable: factory in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16
+[09-Sep-2019 10:24:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/scoopscr/public_html/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16
+[09-Sep-2019 10:24:07 UTC] PHP Notice:  Undefined variable: factory in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16
+[09-Sep-2019 10:24:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/scoopscr/public_html/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16
+[09-Sep-2019 10:25:14 UTC] PHP Notice:  Undefined variable: factory in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16
+[09-Sep-2019 10:25:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/scoopscr/public_html/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16
+[09-Sep-2019 10:32:29 UTC] PHP Notice:  Undefined variable: factory in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16
+[09-Sep-2019 10:32:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/scoopscr/public_html/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16
+[09-Sep-2019 11:26:46 UTC] PHP Notice:  Undefined variable: factory in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16
+[09-Sep-2019 11:26:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/scoopscr/public_html/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16
+[09-Sep-2019 11:26:47 UTC] PHP Notice:  Undefined variable: factory in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16
+[09-Sep-2019 11:26:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/scoopscr/public_html/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/scoopscr/public_html/database/factories/UserFactory.php on line 16

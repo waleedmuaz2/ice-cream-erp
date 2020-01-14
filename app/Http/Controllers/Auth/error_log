@@ -1,0 +1,8 @@
+[09-Sep-2019 11:51:37 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Controller' not found in /home/scoopscr/public_html/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[09-Sep-2019 11:51:39 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Controller' not found in /home/scoopscr/public_html/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[09-Sep-2019 11:51:41 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Controller' not found in /home/scoopscr/public_html/app/Http/Controllers/Auth/LoginController.php on line 8
+[09-Sep-2019 11:51:44 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Controller' not found in /home/scoopscr/public_html/app/Http/Controllers/Auth/LoginController.php on line 8
+[09-Sep-2019 11:51:47 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Controller' not found in /home/scoopscr/public_html/app/Http/Controllers/Auth/RegisterController.php on line 10
+[09-Sep-2019 11:51:50 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Controller' not found in /home/scoopscr/public_html/app/Http/Controllers/Auth/RegisterController.php on line 10
+[09-Sep-2019 11:51:53 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Controller' not found in /home/scoopscr/public_html/app/Http/Controllers/Auth/ResetPasswordController.php on line 8
+[09-Sep-2019 11:51:54 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Controller' not found in /home/scoopscr/public_html/app/Http/Controllers/Auth/ResetPasswordController.php on line 8

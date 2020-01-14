@@ -1,0 +1,4 @@
+[09-Sep-2019 10:26:39 UTC] PHP Fatal error:  Class 'Tests\TestCase' not found in /home/scoopscr/public_html/tests/Feature/ExampleTest.php on line 8
+[09-Sep-2019 10:26:40 UTC] PHP Fatal error:  Class 'Tests\TestCase' not found in /home/scoopscr/public_html/tests/Feature/ExampleTest.php on line 8
+[09-Sep-2019 11:32:00 UTC] PHP Fatal error:  Class 'Tests\TestCase' not found in /home/scoopscr/public_html/tests/Feature/ExampleTest.php on line 8
+[09-Sep-2019 11:32:02 UTC] PHP Fatal error:  Class 'Tests\TestCase' not found in /home/scoopscr/public_html/tests/Feature/ExampleTest.php on line 8
