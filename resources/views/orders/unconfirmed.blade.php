@@ -107,7 +107,7 @@
                 <td>{{ $order->customers->user->name }}</td>
                 <td>{{ $order->ordertaker->name }}</td>
                 <td>{{ $order->unit }}</td>
-                <td>{{ $order->subtotal + $order->amount_left - $order->advance }}</td>
+                <td>{{ $order->amount }}</td>
                 <td>{{ $order->subtotal }}</td>
                 <td>{{ $order->received_amount }}</td>
                 <td>{{ $order->amount - $order->received_amount  }}</td>
@@ -126,9 +126,9 @@
                       <input type="checkbox" name="confirm-to[]" value="{{ $order->id }}" class="approve-to" />
                   </label>
                   @endif
+                  <a href="javascript:;" data-toggle="modal" data-target="#order-detail-popup" class="btn btn-sm btn-success view-details" id="{{ $order->id }}"><i class="fa fa-eye"></i></a>
                   @if($condition[$counter]->id == $order->id)
                     @if(Auth::user()->role <= 3 || Auth::user()->role == 5)
-                    <a href="javascript:;" data-toggle="modal" data-target="#order-detail-popup" class="btn btn-sm btn-success view-details" id="{{ $order->id }}"><i class="fa fa-eye"></i></a>
                     <a href="{{ route('edit.order' , $order->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                     <a href="{{ route('delete.order' , $order->id) }}" class="btn btn-sm btn-danger delete-btn"><i class="fa fa-trash"></i></a>
                   
