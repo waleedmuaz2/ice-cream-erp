@@ -15,7 +15,7 @@ use App\Ordertaker;
 use App\Invoice;
 use App\InvoiceDetail;
 use App\Area;
-
+// use DB;
 use Auth;
 
 use Illuminate\Support\Facades\DB;
@@ -23,14 +23,16 @@ use phpDocumentor\Reflection\Types\Null_;
 class OrderController extends Controller{
 
     public function index($orders,$type){
-     
         $products = Product::get();
         $product_report = [];
         $counter = 0;
-        
+
         if($orders!=null){
+        
+
         foreach($products as $p){
-            $ppunit = 0;$ppamount = 0;
+            $ppunit = 0;
+            $ppamount = 0;
             $product_report[$counter]['id'] = $p->id;
             $product_report[$counter]['name'] = $p->name;
             foreach($orders as $in){
@@ -42,6 +44,11 @@ class OrderController extends Controller{
             $product_report[$counter]['amount'] = $ppamount;
             $counter++;
         }
+         $condition=DB::select('SELECT max(id) as id,customer_id 
+            FROM orders 
+            where is_confirmed_seller is NULL and  is_confirmed_admin  is NULL
+            GROUP BY customer_id order by id asc 
+            ');
     }
         $ordertakers = User::where('role',5)->whereIn('id', $orders->pluck('ot_id')->toArray())->get();
         $areas = Area::whereIn('id', Customer::whereIn('id', $orders->pluck('customer_id'))->pluck('area_id')->toArray())->get();
@@ -50,7 +57,7 @@ class OrderController extends Controller{
             return view('orders.all' , compact('orders' , 'product_report','ordertakers', 'areas'));
         }
         else if($type==2){
-            return view('orders.unconfirmed' , compact('orders' , 'product_report','ordertakers', 'areas'));
+            return view('orders.unconfirmed' , compact('orders' , 'product_report','ordertakers', 'areas', 'condition'));
         }
         else if($type==3){
             return view('orders.seller_confirmed' , compact('orders' , 'product_report','ordertakers', 'areas'));

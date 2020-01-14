@@ -96,6 +96,9 @@
               </tr>
             </thead>
             <tbody>
+                   {{$condition[$counter]->id}}
+
+                   <input type="hidden" value="{{$counter=0}}">
               @foreach($orders as $order)
               <tr>
                 <input type="hidden" class="ot_id" name="ot_id" value="{{ $order->ordertaker->id }}">
@@ -123,11 +126,14 @@
                       <input type="checkbox" name="confirm-to[]" value="{{ $order->id }}" class="approve-to" />
                   </label>
                   @endif
-                  @if(Auth::user()->role <= 3 || Auth::user()->role == 5)
+                  @if($condition[$counter]->id == $order->id)
+                    @if(Auth::user()->role <= 3 || Auth::user()->role == 5)
                     <a href="javascript:;" data-toggle="modal" data-target="#order-detail-popup" class="btn btn-sm btn-success view-details" id="{{ $order->id }}"><i class="fa fa-eye"></i></a>
-                  
                     <a href="{{ route('edit.order' , $order->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                     <a href="{{ route('delete.order' , $order->id) }}" class="btn btn-sm btn-danger delete-btn"><i class="fa fa-trash"></i></a>
+                  
+                   @endif
+                   <input type="hidden" value="{{$counter++}}">
                   @endif
                 </td>
               </tr>
